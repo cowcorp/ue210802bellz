@@ -13,6 +13,7 @@
 // Dependencies
 ////////////////////////////////////////////////////////////////////////////////
 class UCRGameinstance;
+class ACRL0BookLevelstate;
 
 ////////////////////////////////////////////////////////////////////////////////
 // The RTTI should be included last
@@ -25,6 +26,7 @@ class UCRGameinstance;
 UCLASS() class UE210802BELLZ_API UCRGlobal : public UBlueprintFunctionLibrary {
 GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure, Category="UCRGlobal") static float            CastZToU(float afZ);
-    UFUNCTION(BlueprintPure, Category="UCRGlobal") static UCRGameinstance* GetGameinstance(UObject* apoObjectInWorld);
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static float                CastZToU(float afZ);
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static UCRGameinstance*     GetGameinstance(UObject* apoObjectInWorld);
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static ACRL0BookLevelstate* GetL0BookLevelstate(UObject* apoObjectInWorld);
 }; // class UCRGlobal

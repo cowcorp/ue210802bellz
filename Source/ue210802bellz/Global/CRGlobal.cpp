@@ -22,3 +22,12 @@ float UCRGlobal::CastZToU(float afZ) {
 UCRGameinstance* UCRGlobal::GetGameinstance(UObject* apoObjectInWorld) {
     return (UCRGameinstance*)(UGameplayStatics::GetGameInstance(apoObjectInWorld));
 } // GetGameinstance()
+
+////////////////////////////////////////////////////////////////////////////////
+// public UFUNCTION() static ACRL0BookLevelstate* UCRGlobal::GetL0BookLevelstate()
+//
+// This accessor may only be called while the L0Book level is open
+////////////////////////////////////////////////////////////////////////////////
+ACRL0BookLevelstate* UCRGlobal::GetL0BookLevelstate(UObject* apoObjectInWorld) {
+    return (ACRL0BookLevelstate*)(UGameplayStatics::GetGameState(apoObjectInWorld));
+} // GetL0BookLevelstate()

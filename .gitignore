@@ -1,0 +1,11 @@
+# Ignore all files within C:\path\ue210802bellz\.vs\ (but still report if C:\path\ue210802bellz\otherDir\.vs\file.txt is untracked)
+/.vs/
+
+# Ignore all files within C:\path\ue210802bellz\Binaries\ (but still report if C:\path\ue210802bellz\otherDir\Binaries\file.txt is untracked)
+/Binaries/
+
+# Ignore all files within C:\path\ue210802bellz\Intermediate\ (but still report if C:\path\ue210802bellz\otherDir\Intermediate\file.txt is untracked)
+/Intermediate/
+
+# Ignore all files within C:\path\ue210802bellz\Saved\ (but still report if C:\path\ue210802bellz\otherDir\Saved\file.txt is untracked)
+/Saved/
