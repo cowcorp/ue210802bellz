@@ -4,6 +4,21 @@
 # Ignore all files within C:\path\ue210802bellz\Binaries\ (but still report if C:\path\ue210802bellz\otherDir\Binaries\file.txt is untracked)
 /Binaries/
 
+# Ignore all files within C:\path\ue210802bellz\Content\InfinityBladeAdversaries\ (but still report if C:\path\ue210802bellz\otherDir\Content\InfinityBladeAdversaries\file.txt is untracked)
+/Content/InfinityBladeAdversaries/
+
+# Ignore all files within C:\path\ue210802bellz\Content\InfinityBladeGrassLands\ (but still report if C:\path\ue210802bellz\otherDir\Content\InfinityBladeGrassLands\file.txt is untracked)
+/Content/InfinityBladeGrassLands/
+
+# Ignore all files within C:\path\ue210802bellz\Content\InfinityBladeWarriors\ (but still report if C:\path\ue210802bellz\otherDir\Content\InfinityBladeWarriors\file.txt is untracked)
+/Content/InfinityBladeWarriors/
+
+# Ignore all files within C:\path\ue210802bellz\Content\InfinityBladeWeapons\ (but still report if C:\path\ue210802bellz\otherDir\Content\InfinityBladeWeapons\file.txt is untracked)
+/Content/InfinityBladeWeapons/
+
+# Ignore all files within C:\path\ue210802bellz\Content\ParagonKwang\ (but still report if C:\path\ue210802bellz\otherDir\Content\ParagonKwang\file.txt is untracked)
+/Content/ParagonKwang/
+
 # Ignore all files within C:\path\ue210802bellz\Intermediate\ (but still report if C:\path\ue210802bellz\otherDir\Intermediate\file.txt is untracked)
 /Intermediate/
 

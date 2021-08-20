@@ -20,13 +20,15 @@
 UCLASS() class UE210802BELLZ_API ACRL0BookLevelstate : public AGameStateBase {
 GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputactionAttack();
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputactionChangeWeapon();
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputactionJump();
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputaxisAccelerateRY(bool ayNeg);
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputaxisAccelerateRZ(bool ayNeg);
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputaxisMoveX(bool ayNeg);
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputaxisMoveY(bool ayNeg);
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputaxisMoveRY(bool ayNeg);
-    UFUNCTION(BlueprintCallable, Category="ACRL0BookLevelstate") void HandleInputaxisMoveRZ(bool ayNeg);
+    ACRL0BookLevelstate();
+    void HandleInputactionAttack(      int32 aiIndexPlayer);
+    void HandleInputactionChangeWeapon(int32 aiIndexPlayer);
+    void HandleInputactionJump(        int32 aiIndexPlayer);
+    void HandleInputaxisAimRS(                 int32 aiIndexPlayer, bool ayNeg, float afPercent);
+    void HandleInputaxisAimRF(                 int32 aiIndexPlayer, bool ayNeg, float afPercent);
+    void HandleInputaxisMoveAlongAimingForward(int32 aiIndexPlayer, bool ayNeg);
+    void HandleInputaxisMoveAlongAimingRight(  int32 aiIndexPlayer, bool ayNeg);
+
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ACRL0BookLevelstate") bool m_yInputEnabled;
 }; // class ACRL0BookLevelstate

@@ -2,81 +2,96 @@
 // ue210802bellz\Source\ue210802bellz\L0Book\CRL0BookLevelstate.cpp
 ////////////////////////////////////////////////////////////////////////////////
 #include "CRL0BookLevelstate.h"
+#include "../Global/CRGlobal.h"
+#include "CRL0BookLevelpawn.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputactionAttack()
+// public ACRL0BookLevelstate::ACRL0BookLevelstate()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputactionAttack() {
-    GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputactionAttack()"));
+ACRL0BookLevelstate::ACRL0BookLevelstate() : AGameStateBase() {
+    m_yInputEnabled = true;
+} // ACRL0BookLevelstate()
+
+////////////////////////////////////////////////////////////////////////////////
+// public void ACRL0BookLevelstate::HandleInputactionAttack()
+////////////////////////////////////////////////////////////////////////////////
+void ACRL0BookLevelstate::HandleInputactionAttack(int32 aiIndexPlayer) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
+
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputactionAttack();
     return;
 } // HandleInputactionAttack()
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputactionChangeWeapon()
+// public void ACRL0BookLevelstate::HandleInputactionChangeWeapon()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputactionChangeWeapon() {
-    GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputactionChangeWeapon()"));
+void ACRL0BookLevelstate::HandleInputactionChangeWeapon(int32 aiIndexPlayer) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
+
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputactionChangeWeapon();
     return;
 } // HandleInputactionChangeWeapon()
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputactionJump()
+// public void ACRL0BookLevelstate::HandleInputactionJump()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputactionJump() {
-    GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputactionJump()"));
+void ACRL0BookLevelstate::HandleInputactionJump(int32 aiIndexPlayer) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
+
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputactionJump();
     return;
 } // HandleInputactionJump()
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputaxisAccelerateRY()
+// public void ACRL0BookLevelstate::HandleInputaxisAimRS()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputaxisAccelerateRY(bool ayNeg) {
-    if (ayNeg) GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisAccelerateRY(-)"));
-    else       GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisAccelerateRY(+)"));
+void ACRL0BookLevelstate::HandleInputaxisAimRS(int32 aiIndexPlayer, bool ayNeg, float afPercent) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
+
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputaxisAimRS(ayNeg, afPercent);
     return;
-} // HandleInputaxisAccelerateRY()
+} // HandleInputaxisAimRS()
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputaxisAccelerateRZ()
+// public void ACRL0BookLevelstate::HandleInputaxisAimRF()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputaxisAccelerateRZ(bool ayNeg) {
-    if (ayNeg) GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisAccelerateRZ(-)"));
-    else       GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisAccelerateRZ(+)"));
+void ACRL0BookLevelstate::HandleInputaxisAimRF(int32 aiIndexPlayer, bool ayNeg, float afPercent) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
+
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputaxisAimRF(ayNeg, afPercent);
     return;
-} // HandleInputaxisAccelerateRZ()
+} // HandleInputaxisAimRF()
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputaxisMoveX()
+// public void ACRL0BookLevelstate::HandleInputaxisMoveAlongAimingForward()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputaxisMoveX(bool ayNeg) {
-    if (ayNeg) GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveX(-)"));
-    else       GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveX(+)"));
+void ACRL0BookLevelstate::HandleInputaxisMoveAlongAimingForward(int32 aiIndexPlayer, bool ayNeg) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
+
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputaxisMoveAlongAimingForward(ayNeg);
     return;
-} // HandleInputaxisMoveX()
+} // HandleInputaxisMoveAlongAimingForward()
 
 ////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputaxisMoveY()
+// public void ACRL0BookLevelstate::HandleInputaxisMoveAlongAimingRight()
 ////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputaxisMoveY(bool ayNeg) {
-    if (ayNeg) GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveY(-)"));
-    else       GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveY(+)"));
-    return;
-} // HandleInputaxisMoveY()
+void ACRL0BookLevelstate::HandleInputaxisMoveAlongAimingRight(int32 aiIndexPlayer, bool ayNeg) {
+    // Allow most input to be collectively disabled
+    if (! m_yInputEnabled) return;
 
-////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputaxisMoveRY()
-////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputaxisMoveRY(bool ayNeg) {
-    if (ayNeg) GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveRY(-)"));
-    else       GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveRY(+)"));
+    // Cause this event to be handled by the same levelpawn which caused the input
+    UCRGlobal::GetL0BookLevelpawn(this, aiIndexPlayer)->HandleInputaxisMoveAlongAimingRight(ayNeg);
     return;
-} // HandleInputaxisMoveRY()
-
-////////////////////////////////////////////////////////////////////////////////
-// public UFUNCTION() void ACRL0BookLevelstate::HandleInputaxisMoveRZ()
-////////////////////////////////////////////////////////////////////////////////
-void ACRL0BookLevelstate::HandleInputaxisMoveRZ(bool ayNeg) {
-    if (ayNeg) GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveRZ(-)"));
-    else       GEngine->AddOnScreenDebugMessage(INDEX_NONE, 30.0F, FColor::Blue, TEXT("Triggered ACRL0BookLevelstate::HandleInputaxisMoveRZ(+)"));
-    return;
-} // HandleInputaxisMoveRZ()
+} // HandleInputaxisMoveAlongAimingRight()

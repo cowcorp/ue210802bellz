@@ -13,6 +13,7 @@
 // Dependencies
 ////////////////////////////////////////////////////////////////////////////////
 class UCRGameinstance;
+class ACRL0BookLevelpawn;
 class ACRL0BookLevelstate;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,7 +27,9 @@ class ACRL0BookLevelstate;
 UCLASS() class UE210802BELLZ_API UCRGlobal : public UBlueprintFunctionLibrary {
 GENERATED_BODY()
 public:
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static float                CastCToF(float afC);
     UFUNCTION(BlueprintPure, Category="UCRGlobal") static float                CastZToU(float afZ);
-    UFUNCTION(BlueprintPure, Category="UCRGlobal") static UCRGameinstance*     GetGameinstance(UObject* apoObjectInWorld);
-    UFUNCTION(BlueprintPure, Category="UCRGlobal") static ACRL0BookLevelstate* GetL0BookLevelstate(UObject* apoObjectInWorld);
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static UCRGameinstance*     GetGameinstance(const UObject* apoObjectInWorld);
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static ACRL0BookLevelpawn*  GetL0BookLevelpawn(const UObject* apoObjectInWorld, int32 aiIndexPlayer);
+    UFUNCTION(BlueprintPure, Category="UCRGlobal") static ACRL0BookLevelstate* GetL0BookLevelstate(const UObject* apoObjectInWorld);
 }; // class UCRGlobal
